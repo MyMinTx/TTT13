@@ -1,0 +1,142 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.up{
+    display: flex;
+    gap: 100px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;    
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(./mg/svt.jpg);
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.card:hover {
+    width: 600px;
+    transition-delay: 0; 
+}
+
+.card .circle {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.card:hover .circle::before {
+    clip-path: circle(400px at center);
+}
+
+.card .circle .logo {
+    position: relative;
+    width: 250px;
+}
+
+.card:hover .circle .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.content {
+    position: absolute;
+    right: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.card:hover .content {
+    right:0;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.content h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height: 1em;
+}
+
+.content p {
+    color: #fff;
+}
+
+.content a {
+    position: relative;
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card .cd {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    opacity: 0;
+    height: 374px;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.card:hover .cd {
+    display: flex ;
+    opacity: 1;
+    left: 25%;
+    transform: translate(-50%,-50%) scale(01);
+    transition-delay: 0.5s;
+}
